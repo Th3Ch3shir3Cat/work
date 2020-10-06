@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" lang="auto">
+<head>
+    <th:block th:replace="fragments/head :: headForTable('ScaleApps')"/>
+</head>
+<body>
+<section id = "information" class = "information">
+    <div class = "container">
+        <div class = "row">
+            <div class = "col-lg-6">
+                <div class="title">
+                    <h2 class="title__main">
+                        Группы университета ScaleApps
+                    </h2>
+                </div>
+            </div>
+        </div>
+        <table
+                id="GroupsTable"
+                data-toggle="table"
+                data-locale="ru-RU"
+                data-toolbar="#toolbar"
+                data-minimum-count-columns="2"
+                data-url="/groups/table"
+                class="table table-bordered table-hover table-striped"
+        >
+        </table>
+    </div>
+</section>
+
+<footer class="footer navbar-fixed-bottom mt-auto py-3" th:include="fragments/footer :: footerForTables"></footer>
+<script type="text/javascript" th:src="@{/js/groupsTable.js}"></script>
+
+</body>
+</html>
