@@ -29,14 +29,8 @@ public class StudentController {
 
 
     @PostMapping("/create")
-    public ResponseEntity<Message> addStudent(@RequestBody Student student){
-        try{
-            studentService.save(student);
-            return new ResponseEntity<Message> (HttpStatus.OK);
-        }
-        catch(Exception exception){
-            return new ResponseEntity<Message> (HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+    public Student addStudent(@RequestBody Student student){
+        return studentService.save(student);
     }
 
 
@@ -47,6 +41,7 @@ public class StudentController {
             studentService.deleteStudent(id);
             return new ResponseEntity<Message> (HttpStatus.OK);
         } catch (Exception exception) {
+            System.out.println("ОшибОчка");
             return new ResponseEntity<Message> (HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }

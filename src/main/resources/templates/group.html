@@ -18,18 +18,18 @@
             </div>
         </div>
         <div class = "col-8 pl-0">
-            <div class="form-group">
-                <input type="hidden" id="id" th:name="id" th:value="${group.id}"/>
-            </div>
             <table
                     id="StudentsTable"
                     data-locale="ru-RU">
             </table>
         </div>
-        <form id = "groupFrom" name = "groupForm" th:method="post" th:object = "${student}">
+        <form id = "newStudent" name = "newStudent" th:object = "${student}">
             <div class = "form-group col-3 pl-0">
                 <div class = "mb-3 mt-5">
                     <input class = "form-control border-dark" type = "text" placeholder="ФИО" id = "fio" th:field="*{fio}">
+                </div>
+                <div class="form-group">
+                    <input type="hidden" id="group" th:name="group" th:value="${group.getId()}"/>
                 </div>
                 <div>
                     <button id = "addNewStudent" class = "btn btn-outline-secondary btn-block" type = "submit">Принять нового студента
