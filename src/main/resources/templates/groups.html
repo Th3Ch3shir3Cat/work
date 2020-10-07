@@ -28,7 +28,7 @@
         >
         </table>
         </div>
-        <form id = "groupFrom" name = "groupForm" th:action="@{/group}" th:method="post" th:object = "${group}">
+        <form id = "groupForm" name = "groupForm" th:action="@{/group}" th:method="post" th:object = "${group}">
             <div class = "form-group col-3 pl-0">
             <div class = "mb-3 mt-5">
                 <input class = "form-control border-dark" type = "text" placeholder="Номер группы" id = "number" th:field="*{number}">

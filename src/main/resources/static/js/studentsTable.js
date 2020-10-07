@@ -93,6 +93,10 @@ $(document).ready(function () {
             let date_access = today;
             let fio_student = $newStudent.find('#fio');
             let group = $newStudent.find('#group').val();
+            if (fio_student.val() === '') {
+                fio_student.addClass('is-invalid');
+            } else {
+                fio_student.removeClass('is-invalid');
                 $.ajax({
                     type: "POST",
                     headers: {
@@ -120,6 +124,7 @@ $(document).ready(function () {
                         console.log(data);
                     }
                 });
+            }
         }
     )
 

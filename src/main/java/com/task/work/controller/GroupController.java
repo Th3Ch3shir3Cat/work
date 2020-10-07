@@ -14,6 +14,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
@@ -57,7 +58,7 @@ public class GroupController {
     }
 
     @PostMapping(value = "/group")
-    public String saveNewGroup(Model model, Group group){
+    public String saveNewGroup(Model model, @RequestBody Group group){
         try{
             group = groupService.save(group);
         }catch(Exception e){

@@ -1,4 +1,5 @@
 let $table = $('#GroupsTable')
+let $addNewGroupFrom = $('#groupForm')
 
 $(document).ready(function () {
 
@@ -36,6 +37,34 @@ $(document).ready(function () {
             }
             ]
         })
+    })
+
+    $addNewGroupFrom.submit(function (e){
+        e.preventDefault();
+        let numberGroup = $addNewGroupFrom.find('#number');
+        if(numberGroup.val() === ''){
+            numberGroup.addClass('is-invalid');
+        }else{
+            numberGroup.removeClass('is-invalid');
+            $.ajax({
+                type: "POST",
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                data: JSON.stringify({
+                    number: numberGroup.val(),
+                }),
+                url: "/group",
+                success: function(data){
+                    data = $(data).find('#group');
+                    window.location = "/group/"+data.val();
+                },
+                error: function (){
+                  console.log("sdf");
+                }
+            })
+        }
     })
 
 })
