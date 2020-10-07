@@ -29,7 +29,7 @@ public class StudentService {
     }
 
     public List<Student> getAllStudentsForGroup(Group group){
-        return studentRepository.findAllByGroup(group);
+        return studentRepository.findAllByGroupOrderByFio(group);
     }
 
     public Student save(Student student){
