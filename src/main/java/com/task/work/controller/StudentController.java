@@ -41,7 +41,6 @@ public class StudentController {
             studentService.deleteStudent(id);
             return new ResponseEntity<Message> (HttpStatus.OK);
         } catch (Exception exception) {
-            System.out.println("ОшибОчка");
             return new ResponseEntity<Message> (HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }

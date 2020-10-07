@@ -23,8 +23,8 @@
                     data-locale="ru-RU">
             </table>
         </div>
-        <form id = "newStudent" name = "newStudent" th:object = "${student}">
-            <div class = "form-group col-3 pl-0">
+        <form class = "col-3 pl-0" id = "newStudent" name = "newStudent" th:object = "${student}">
+            <div class = "form-group">
                 <div class = "mb-3 mt-5">
                     <input class = "form-control border-dark" type = "text" placeholder="ФИО" id = "fio" th:field="*{fio}">
                 </div>
@@ -37,6 +37,10 @@
                 </div>
             </div>
         </form>
+        <div class = "col-3 pl-0 pt-3">
+            <button id = "returnToAllGroups" onclick="document.location='/'" class = "btn btn-outline-secondary btn-block" type = "button">Вернуться к списку групп
+            </button>
+        </div>
     </div>
 </section>
 
