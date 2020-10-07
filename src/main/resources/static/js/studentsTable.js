@@ -90,7 +90,6 @@ $(document).ready(function () {
     $table.submit(function (e) {
             // Отменяем перезагрузку страницы при сабмите
             e.preventDefault()
-            // Обрабатываем значения для клиента с формы
             let date_access = today;
             let fio = $table.find('#fio');
             let idValue = $table.find('#id').val();
