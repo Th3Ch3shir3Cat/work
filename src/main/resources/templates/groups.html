@@ -16,6 +16,7 @@
                 </div>
             </div>
         </div>
+        <div class = "col-6 pl-0">
         <table
                 id="GroupsTable"
                 data-toggle="table"
@@ -26,6 +27,18 @@
                 class="table table-bordered table-hover table-striped"
         >
         </table>
+        </div>
+        <form id = "groupFrom" name = "groupForm" th:action="@{/group}" th:method="post" th:object = "${group}">
+            <div class = "form-group col-3 pl-0">
+            <div class = "mb-3 mt-5">
+                <input class = "form-control border-dark" type = "text" placeholder="Номер группы" id = "number" th:field="*{number}">
+            </div>
+            <div>
+                <button id = "addNewGroup" class = "btn btn-outline-secondary btn-block" type = "submit">Добавить новую группу
+                </button>
+            </div>
+            </div>
+        </form>
     </div>
 </section>
 

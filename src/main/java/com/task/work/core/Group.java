@@ -26,7 +26,7 @@ public class Group {
 
     @Column(name = "numerus_students")
     @JsonView(Views.ForTable.class)
-    private int numerus_students;
+    private int numerus_students = 0;
 
 
 }

@@ -2,19 +2,14 @@ let $table = $('#GroupsTable')
 
 $(document).ready(function () {
 
-    // Действия по клику на иконку "изменить"
+
     function onEditClick(value, row, index) {
-        window.location = '/group/' + row.id;
+        window.location = '/group/' + row.Id;
     }
 
     $(function () {
         $table.bootstrapTable('destroy').bootstrapTable({
             columns: [{
-                field: 'Id',
-                title: 'ID',
-                align: 'center',
-                valign: 'middle'
-            },{
                 field: 'number',
                 title: 'Номер',
                 align: 'center',

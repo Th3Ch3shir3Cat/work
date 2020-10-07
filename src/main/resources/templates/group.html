@@ -1,10 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      lang="auto">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <th:block th:replace="fragments/head :: headForTable('ScaleApps')"/>
 </head>
 <body>
+<section id = "information" class = "information">
+    <div class = "container">
+        <div class = "row">
+            <div class = "col-lg-6">
+                <div class="title">
+                    <h2 th:text = "'Группа № ' + ${group.number}">
+                    </h2>
+                </div>
+            </div>
+        </div>
+        <div class = "col-8 pl-0">
+            <div class="form-group">
+                <input type="hidden" id="id" th:name="id" th:value="${group.id}"/>
+            </div>
+            <table
+                    id="StudentsTable"
+                    data-locale="ru-RU">
+            </table>
+        </div>
+        <form id = "groupFrom" name = "groupForm" th:method="post" th:object = "${student}">
+            <div class = "form-group col-3 pl-0">
+                <div class = "mb-3 mt-5">
+                    <input class = "form-control border-dark" type = "text" placeholder="ФИО" id = "fio" th:field="*{fio}">
+                </div>
+                <div>
+                    <button id = "addNewStudent" class = "btn btn-outline-secondary btn-block" type = "submit">Принять нового студента
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
 
+<div th:replace="fragments/dialogs ::askDeleteDialog"></div>
+<footer class="footer navbar-fixed-bottom mt-auto py-3" th:include="fragments/footer :: footerForTables"></footer>
+<script type="text/javascript" th:src="@{/js/studentsTable.js}"></script>
 </body>
 </html>
